@@ -1,0 +1,4 @@
+[dotfiles]
+"~/.codex/AGENTS.md" = { source = "codex/AGENTS.md", mode = "copy" }
+"~/.codex/rules/user-policy.rules" = { source = "codex/rules/user-policy.rules", mode = "copy" }
+"~/.codex/config.toml/workspace-write" = { source = "codex/config/workspace-write.toml.tera", template = "tera" }

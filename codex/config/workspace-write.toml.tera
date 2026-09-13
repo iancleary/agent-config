@@ -1,0 +1,6 @@
+[sandbox_workspace_write]
+writable_roots = [
+  "{{ env.HOME }}/Code/skills",
+  "{{ env.HOME }}/Code/agent-config",
+  "{{ env.HOME }}/Code/release-skills",
+]
