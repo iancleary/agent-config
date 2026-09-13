@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "cut-release": {
+      "source": "iancleary/release-skills",
+      "sourceType": "github",
+      "skillPath": "skills/cut-release/SKILL.md",
+      "computedHash": "4fbf3c86a0617c6816f49d67cc2135dd1903e79b3df697cf799a9c1e791b6e8b"
+    }
+  }
+}

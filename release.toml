@@ -1,0 +1,27 @@
+# Release workflow: https://github.com/iancleary/release-skills
+[runner_source]
+repository = "https://github.com/iancleary/release-skills"
+revision = "ff13bed132bd45ee212ff45dde9e6d96816cc912"
+sha256 = "c59d55c6ab708cf1a1b624fa8f47a56d8ba0743efb0ca0b89077e4bd01bf5a7d"
+
+[release]
+runner_protocol = "prepared-v1"
+name = "agent-config"
+runner = [
+  "uv", "run", "scripts/release.py", "tag-release",
+  "--provider", "github",
+  "--tag-prefix", "",
+  "--branch", "main",
+]
+dry_run_args = ["--dry-run"]
+current_version_command = ["uv", "run", "scripts/release_policy.py", "current"]
+next_version_command = ["uv", "run", "scripts/release_policy.py", "next"]
+validate_version_command = ["uv", "run", "scripts/release_policy.py", "validate"]
+publish = true
+
+[checks]
+commands = [
+  ["uv", "run", "scripts/release_policy.py", "check"],
+  ["git", "diff", "--check"],
+  ["uv", "run", "--python", "3.11", "python", "-B", "scripts/test_release_policy.py"],
+]
