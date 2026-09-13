@@ -39,3 +39,8 @@ writes through approval. Machine-generated approvals in `rules/default.rules`
 remain local and should be reviewed periodically.
 
 See https://mise.jdx.dev/bootstrap/dotfiles.html for mise's dotfile contract.
+
+## Releases
+
+Releases use UTC CalVer `YYYY.MM.DD.XX` and the checked-in `release.toml`
+contract. See [`docs/release.md`](docs/release.md).
