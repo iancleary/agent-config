@@ -21,7 +21,9 @@ The source is codex/AGENTS.md; the installed target is ~/.codex/AGENTS.md.
 ## Git And External Writes
 
 - No Co-Authored-By lines in commits.
-- Use one branch per feature or fix. Run Git mutations serially; do not overlap index or branch writes.
+- Use one branch per feature or fix.
+- Run Git mutations serially across repositories and delegated agents. Wait for each mutation to finish and verify its result before starting the next. A running command or session is not completion. Do not overlap index or branch writes.
+- Serialization is instruction-level protection until the execution scheduler enforces it across agents. An optional wrapper does not provide that guarantee.
 - Remove merged local task branches only when they contain no undelivered work. Remote branch deletion follows the authorization rule above.
 - Use conventional commits when the repository already uses them.
 - Prefer gh for GitHub workflows. For substantial Markdown bodies, write and inspect a file, then use --body-file when supported. Keep one-line bodies inline when quoting is straightforward.
