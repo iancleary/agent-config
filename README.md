@@ -11,6 +11,10 @@ Personal Codex instructions and curated command policies, deployed with mise.
 | `codex/config/workspace-write.toml.tera` | Managed workspace-write block in `~/.codex/config.toml` |
 | `codex/config/features.toml.tera` | Managed Codex feature block in `~/.codex/config.toml` |
 
+The workspace-write block grants access to `~/Work/skills`,
+`~/Work/agent-config`, and `~/Work/release-skills`. It does not grant access
+to the whole home directory.
+
 Use mise with `bootstrap dotfiles` support (verified with 2026.9.6).
 If your Codex configuration already has a `[features]` table, complete the
 [feature-block adoption](#standalone-codex-sessions) before applying this baseline.

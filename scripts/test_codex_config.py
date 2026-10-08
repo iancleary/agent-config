@@ -43,6 +43,11 @@ js_repl = false
                              if existing_features else {'daemon_auto_start': False})
         assert actual['features'] == expected_features, actual
         assert actual['local'] == {'keep': 'host-owned'}, actual
+        assert actual['sandbox_workspace_write']['writable_roots'] == [
+            str(home / 'Work/skills'),
+            str(home / 'Work/agent-config'),
+            str(home / 'Work/release-skills'),
+        ], actual['sandbox_workspace_write']
         config.write_text(config.read_text().replace(
             'daemon_auto_start = false', 'daemon_auto_start = true'))
         result = subprocess.run(command, cwd=repo, env=env,
