@@ -1,0 +1,2 @@
+[features]
+daemon_auto_start = false
